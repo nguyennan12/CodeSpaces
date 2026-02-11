@@ -1,10 +1,8 @@
-
-import './App.css'
-
+import Problems from '~/pages/Problems/_id'
 function App() {
   return (
     <>
-      <div>hello</div>
+      <Problems />
     </>
   )
 }
