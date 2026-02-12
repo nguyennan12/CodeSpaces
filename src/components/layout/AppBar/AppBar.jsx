@@ -12,7 +12,7 @@ import Typography from '@mui/material/Typography'
 import { useState } from 'react'
 import Chip from '@mui/material/Chip'
 import Profiles from './Menus/Profiles'
-import ModeSelect from '~/components/common/ModeSelect/ModeSelect'
+import ModeSelect from '~/components/common/ModeSwitch/ModeSwitch'
 import { useColorScheme } from '@mui/material/styles'
 
 
