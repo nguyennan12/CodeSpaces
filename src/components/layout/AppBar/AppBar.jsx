@@ -1,5 +1,5 @@
 import ClearIcon from '@mui/icons-material/Clear'
-import HelpOutlineIcon from '@mui/icons-material/HelpOutline'
+import LocalFireDepartmentOutlinedIcon from '@mui/icons-material/LocalFireDepartmentOutlined';
 import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone'
 import SearchIcon from '@mui/icons-material/Search'
 import { InputAdornment } from '@mui/material'
@@ -10,10 +10,10 @@ import TextField from '@mui/material/TextField'
 import Tooltip from '@mui/material/Tooltip'
 import Typography from '@mui/material/Typography'
 import { useState } from 'react'
-import Prenium from './Menus/Prenium'
+import Prenium from './Menus/Store'
 import Profiles from './Menus/Profiles'
 import ModeSelect from '~/components/common/ModeSelect/ModeSelect'
-
+import DataObjectOutlinedIcon from '@mui/icons-material/DataObjectOutlined';
 
 function AppBar() {
   const [searchValue, setSearchValue] = useState('')
@@ -28,10 +28,15 @@ function AppBar() {
       justifyContent: 'space-between',
       backgroundColor: 'primary.main'
     }}>
-      <Box sx={{ display: 'flex', gap: 2 }}>
-        <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
-          {/* logo icon */}
-          <Typography variant='h6'>CodeSpaces</Typography>
+      <Box sx={{ display: 'flex', gap: 2, alignItems: 'center' }}>
+        <Box sx={{ display: 'flex', gap: 0.5, alignItems: 'center' }}>
+          {/* <DataObjectOutlinedIcon size="large" sx={{ color: 'secondary.main' }} /> */}
+          <Typography sx={{
+            fontWeight: 700,
+            background: 'linear-gradient(90deg, #3465c8, #69aedc, #8acdde)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent'
+          }} variant='h6'>CodeSpaces</Typography>
         </Box>
         <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
           <Button variant='text'>Home</Button>
@@ -53,7 +58,7 @@ function AppBar() {
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
-                <SearchIcon sx={{ color: 'primary.contrastText' }} />
+                <SearchIcon sx={{ color: 'secondary.main' }} />
               </InputAdornment>
             ),
             endAdornment: (
@@ -77,17 +82,28 @@ function AppBar() {
             '& .MuiOutlinedInput-root': {
               borderRadius: '30px',
               '& input': { p: 0.875 },
-              '& fieldset': { borderColor: 'primary.contrastText' },
-              '&:hover fieldset': { borderColor: 'primary.contrastText' },
-              '&.Mui-focused fieldset': { borderColor: 'primary.contrastText' }
+              '& fieldset': { borderColor: 'secondary.main' },
+              '&:hover fieldset': { borderColor: 'secondary.main' },
+              '&.Mui-focused fieldset': { borderColor: 'secondary.main' }
             }
           }} />
-        <ModeSelect />
+        {/* <ModeSelect /> */}
         <Tooltip title="Notifications">
           <Badge color="secondary" variant="dot">
             <NotificationsNoneIcon sx={{ color: 'primary.contrastText' }} />
           </Badge>
         </Tooltip>
+
+        <Tooltip title="Streaks">
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
+            <Badge color="secondary">
+              <LocalFireDepartmentOutlinedIcon size='middle' sx={{ color: 'primary.contrastText' }} />
+            </Badge>
+            <Typography variant='b1'>0</Typography>
+          </Box>
+
+        </Tooltip>
+
         <Profiles />
       </Box>
 

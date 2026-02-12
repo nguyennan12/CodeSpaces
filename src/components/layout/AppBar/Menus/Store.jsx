@@ -25,7 +25,7 @@ function Prenium() {
         endIcon={<ExpandMoreIcon />}
         sx={{ color: 'secondary.main' }}
       >
-        Dashboard
+        Store
       </Button>
       <Menu
         id="basic-menu"
@@ -38,9 +38,9 @@ function Prenium() {
           }
         }}
       >
-        <MenuItem onClick={handleClose}>Profile</MenuItem>
-        <MenuItem onClick={handleClose}>My account</MenuItem>
-        <MenuItem onClick={handleClose}>Logout</MenuItem>
+        <MenuItem onClick={handleClose}>Prenium</MenuItem>
+        <MenuItem onClick={handleClose}>Redeem</MenuItem>
+        <MenuItem onClick={handleClose}>Pro</MenuItem>
       </Menu>
     </>
 

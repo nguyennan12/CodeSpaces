@@ -24,7 +24,7 @@ const theme = extendTheme({
           contrastText: '#222526'
         },
         secondary: {
-          main: '#56d1f7',
+          main: '#3465c8',
           contrastText: '#ffffff'
         }
       }
@@ -48,7 +48,8 @@ const theme = extendTheme({
       styleOverrides: {
         root: {
           textTransform: 'none',
-          color: 'var(--mui-palette-primary-contrastText)'
+          color: 'var(--mui-palette-primary-contrastText)',
+          fontSize: '1rem'
         }
       }
     },
