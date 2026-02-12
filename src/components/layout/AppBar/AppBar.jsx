@@ -10,14 +10,16 @@ import TextField from '@mui/material/TextField'
 import Tooltip from '@mui/material/Tooltip'
 import Typography from '@mui/material/Typography'
 import { useState } from 'react'
-import Prenium from './Menus/Store'
+import Chip from '@mui/material/Chip'
 import Profiles from './Menus/Profiles'
 import ModeSelect from '~/components/common/ModeSelect/ModeSelect'
-import DataObjectOutlinedIcon from '@mui/icons-material/DataObjectOutlined';
+import { useColorScheme } from '@mui/material/styles'
+
+
 
 function AppBar() {
   const [searchValue, setSearchValue] = useState('')
-
+  const { mode } = useColorScheme()
   return (
     <Box sx={{
       height: (theme) => theme.codesapces.appBarHeight,
@@ -33,17 +35,29 @@ function AppBar() {
           {/* <DataObjectOutlinedIcon size="large" sx={{ color: 'secondary.main' }} /> */}
           <Typography sx={{
             fontWeight: 700,
-            background: 'linear-gradient(90deg, #3465c8, #69aedc, #8acdde)',
+            background:
+              mode === 'dark'
+                ? 'linear-gradient(90deg, #6bb828, #6be446, #baf58d)'
+                : 'linear-gradient(90deg, #3465c8, #69aedc, #8acdde)',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent'
           }} variant='h6'>CodeSpaces</Typography>
         </Box>
-        <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
+        <Box sx={{ display: { xs: 'none', md: 'flex' }, alignItems: 'center' }}>
           <Button variant='text'>Home</Button>
           <Button variant='text'>Problems</Button>
           <Button variant='text'>Course</Button>
           <Button variant='text'>Blog</Button>
-          <Prenium />
+          <Chip label="Premium" sx={{
+            color: 'secondary.main',
+            px: 1,
+            fontWeight: 'bold',
+            backgroundColor:
+              mode === 'dark'
+                ? 'rgba(134, 245, 134, 0.3)'
+                : 'rgba(154, 185, 247, 0.3)'
+
+          }} />
         </ Box>
       </Box>
 
@@ -87,7 +101,7 @@ function AppBar() {
               '&.Mui-focused fieldset': { borderColor: 'secondary.main' }
             }
           }} />
-        {/* <ModeSelect /> */}
+        <ModeSelect />
         <Tooltip title="Notifications">
           <Badge color="secondary" variant="dot">
             <NotificationsNoneIcon sx={{ color: 'primary.contrastText' }} />
