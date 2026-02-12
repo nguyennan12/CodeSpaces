@@ -26,8 +26,10 @@ const theme = extendTheme({
         secondary: {
           main: '#3465c8',
           contrastText: '#ffffff'
-        }
+        },
+        divider: '#eeeeee'
       }
+
     },
     dark: {
       palette: {

@@ -24,12 +24,25 @@ function ProblemsBar() {
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'space-between',
-      boxShadow: 'inset 0 0 4px rgba(0,0,0,0.15)'
+      boxShadow: 'inset 0 0 4px rgba(0,0,0,0.15)',
+      overflowY: 'hidden',
+      overflowX: 'auto',
+      gap: 2,
+      '&::-webkit-scrollbar': {
+        display: 'none'
+      }
     }}>
       <Box sx={{ display: 'flex', alignItems: 'center' }}>
         <Button sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
           <PlaylistPlayIcon sx={{ color: 'secondary.main' }} />
-          <Typography variant='b1' sx={{ fontWeight: 'bold', fontSize: '1rem', color: 'secondary.main' }}>Problem List</Typography>
+          <Typography
+            variant='b1'
+            noWrap
+            sx={{
+              fontWeight: 'bold',
+              minWidth: 0,
+              color: 'secondary.main'
+            }}>Problem List</Typography>
         </Button>
         <Tooltip title='Prev Problem'>
           <Button sx={{ p: 0, minWidth: 'unset', width: '24px' }}>

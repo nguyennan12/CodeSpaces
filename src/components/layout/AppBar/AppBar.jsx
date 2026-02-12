@@ -32,7 +32,6 @@ function AppBar() {
     }}>
       <Box sx={{ display: 'flex', gap: 2, alignItems: 'center' }}>
         <Box sx={{ display: 'flex', gap: 0.5, alignItems: 'center' }}>
-          {/* <DataObjectOutlinedIcon size="large" sx={{ color: 'secondary.main' }} /> */}
           <Typography sx={{
             fontWeight: 700,
             background:
