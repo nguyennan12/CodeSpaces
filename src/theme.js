@@ -107,6 +107,10 @@ const theme = extendTheme({
           '&.Mui-selected .MuiSvgIcon-root': {
             color: 'var(--mui-palette-secondary-main) !important',
             fontWeight: 600
+          },
+          '&.Mui-selected .MuiTypography-root': {
+            color: 'var(--mui-palette-secondary-main) !important',
+            fontWeight: 600
           }
         }
 

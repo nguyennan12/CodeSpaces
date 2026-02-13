@@ -36,7 +36,7 @@ function AppBar() {
             fontWeight: 700,
             background:
               mode === 'dark'
-                ? 'linear-gradient(90deg, #6bb828, #6be446, #baf58d)'
+                ? 'linear-gradient(90deg, #0d6d08, #2cb92f, #9ce961)'
                 : 'linear-gradient(90deg, #3465c8, #69aedc, #8acdde)',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent'

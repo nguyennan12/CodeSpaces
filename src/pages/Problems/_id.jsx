@@ -2,13 +2,15 @@ import Container from '@mui/material/Container'
 import AppBar from '~/components/layout/AppBar/AppBar'
 import ProblemsBar from './ProblemsBar/ProblemsBar'
 import ProblemContent from './ProblemContent/ProblemContent'
+import { useState } from 'react'
 
 function Problems() {
+  const [language, setLanguage] = useState('javascript')
   return (
     <Container disableGutters maxWidth={false} sx={{ height: '100vh' }}>
       <AppBar />
-      <ProblemsBar />
-      <ProblemContent />
+      <ProblemsBar language={language} onSelect={setLanguage} />
+      <ProblemContent language={language} />
     </Container>
   )
 }

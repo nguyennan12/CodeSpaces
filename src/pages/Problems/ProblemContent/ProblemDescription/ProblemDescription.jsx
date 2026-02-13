@@ -15,7 +15,7 @@ import Description from './Description/Description'
 import Folder from './Folder/Folder'
 import Submissions from './Submissions/Submissions'
 import Discussions from './Discussions/Discussions'
-
+import ArrowBackIosNewOutlinedIcon from '@mui/icons-material/ArrowBackIosNewOutlined'
 
 function ProblemDescription() {
   const [value, setValue] = React.useState('1')
@@ -47,10 +47,15 @@ function ProblemDescription() {
             <Tab label={<Tooltip title="Discussions"><QuestionAnswerOutlinedIcon /></Tooltip>} value="4" />
 
           </TabList>
-          <Box>
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
             <Tooltip title='Maximize'>
               <Button sx={{ p: 0, minWidth: 'unset', width: '20px' }}>
-                <ZoomOutMapOutlinedIcon sx={{ color: '#8f8f8f' }} />
+                <ZoomOutMapOutlinedIcon sx={{ fontSize: '1.25rem', color: '#8f8f8f' }} />
+              </Button>
+            </Tooltip>
+            <Tooltip title='Fold'>
+              <Button sx={{ p: 0, minWidth: 'unset', width: '20px' }}>
+                <ArrowBackIosNewOutlinedIcon sx={{ fontSize: '1.25rem', color: '#8f8f8f' }} />
               </Button>
             </Tooltip>
           </Box>

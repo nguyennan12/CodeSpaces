@@ -12,9 +12,11 @@ import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined'
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
 import Tooltip from '@mui/material/Tooltip'
+import LanguageSelect from '~/components/common/LanguageSelect/LanguageSelect'
 import Typography from '@mui/material/Typography'
+import * as React from 'react'
 
-function ProblemsBar() {
+function ProblemsBar({ language, onSelect }) {
   return (
     <Box sx={{
       height: (theme) => theme.codesapces.problemdBarHeight,
@@ -71,6 +73,7 @@ function ProblemsBar() {
             <Typography sx={{ fontWeight: 'bold' }}>Submit</Typography>
           </Button>
         </Tooltip>
+        <LanguageSelect language={language} onSelect={onSelect} />
       </Box>
       <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }} >
         <Box sx={{

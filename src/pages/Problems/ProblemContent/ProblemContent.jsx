@@ -4,20 +4,20 @@ import '~/assets/styles/split.css'
 import ProblemDescription from './ProblemDescription/ProblemDescription'
 import CodeEditor from './CodeEditor/CodeEditor'
 
-function ProblemContent() {
+function ProblemContent({ language }) {
   return (
     <Box sx={{
       height: (theme) => theme.codesapces.problemContentHeight,
       width: '100%'
     }}>
       <Split
-        class="split"
+        className="split"
         sizes={[40, 60]}
         minSize={300}
         gutterSize={8}
       >
         <ProblemDescription />
-        <CodeEditor />
+        <CodeEditor language={language} />
       </Split>
     </Box>
   )

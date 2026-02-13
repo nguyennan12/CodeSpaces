@@ -1,10 +1,11 @@
-// import { renderIcon } from '~/utils/creatIconFIle'
-import { getIcon } from '~/utils/createIconFile.jsx'
+
+
+import Box from '@mui/material/Box'
 function Folder() {
   return (
-    <div>
-      Folder
-    </div>
+    <Box>
+      
+    </Box>
   )
 }
 
