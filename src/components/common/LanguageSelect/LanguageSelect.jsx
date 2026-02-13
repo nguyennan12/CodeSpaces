@@ -72,14 +72,16 @@ function LanguageSelect({ language, onSelect }) {
         {LANGUAGES.map((lang) => (
 
           <MenuItem key={lang.id} onClick={() => handleSelected(lang)}>
-            <Tooltip title={lang.version} placement="left" arrow >
-              <img
-                src={lang.icon}
-                alt={lang.label}
-                width={18}
-                style={{ marginRight: 8 }}
-              />
-              {lang.label}
+            <Tooltip title={lang.version} placement="right" arrow >
+              <Box sx={{ width: '100%' }}>
+                <img
+                  src={lang.icon}
+                  alt={lang.label}
+                  width={18}
+                  style={{ marginRight: 8 }}
+                />
+                {lang.label}
+              </Box>
             </Tooltip>
 
           </MenuItem>

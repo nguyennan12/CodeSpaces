@@ -3,7 +3,7 @@ import '~/assets/styles/split.css'
 import Code from './Code/Code'
 import Terminal from './Terminal/Terminal'
 
-function CodeEditor({ language }) {
+function CodeEditor({ language, editorRef }) {
   return (
 
     <Split
@@ -14,8 +14,8 @@ function CodeEditor({ language }) {
       gutterSize={8}
 
     >
-      <Code language={language} />
-      <Terminal />
+      <Code language={language} editorRef={editorRef} />
+      <Terminal language={language} editorRef={editorRef} />
     </Split>
 
   )

@@ -4,9 +4,8 @@ import { useState, useRef, useEffect } from 'react'
 import { findSelectedLanguage } from '~/utils/findSelectedLanguage'
 import { useColorScheme } from '@mui/material/styles'
 
-function Code({ language }) {
+function Code({ language, editorRef }) {
 
-  const editorRef = useRef(null)
   const [codeValue, setCodeValue] = useState('')
 
   const { mode } = useColorScheme()

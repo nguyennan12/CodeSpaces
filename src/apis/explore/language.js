@@ -5,6 +5,7 @@ export const LANGUAGES = [
     icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
     version: 'Node.js 18',
     monacoLang: 'javascript',
+    runtime: { language: 'javascript', version: '18.15.0' },
     defaultCode: `// JavaScript
 function solve() {
   console.log("Hello World");
@@ -16,6 +17,7 @@ solve();`
     label: 'TypeScript',
     icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg',
     version: 'TS 5',
+    runtime: { language: 'typescript', version: '5.0.3' },
     monacoLang: 'typescript',
     defaultCode: `// TypeScript
 function solve(): void {
@@ -28,6 +30,7 @@ solve();`
     label: 'Python',
     icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg',
     version: 'Python 3.10',
+    runtime: { language: 'python', version: '3.10.0' },
     monacoLang: 'python',
     defaultCode: `# Python
 def solve():
@@ -40,6 +43,7 @@ solve()`
     label: 'C++',
     icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg',
     version: 'GCC 14',
+    runtime: { language: 'cpp', version: '10.2.0' },
     monacoLang: 'cpp',
     defaultCode: `// C++
 #include <bits/stdc++.h>
@@ -55,6 +59,7 @@ int main() {
     label: 'C',
     icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg',
     version: 'GCC 14',
+    runtime: { language: 'c', version: '10.2.0' },
     monacoLang: 'c',
     defaultCode: `// C
 #include <stdio.h>
@@ -69,6 +74,7 @@ int main() {
     label: 'Java',
     icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg',
     version: 'Java 17',
+    runtime: { language: 'java', version: '15.0.2' },
     monacoLang: 'java',
     defaultCode: `// Java
 public class Main {
@@ -82,6 +88,7 @@ public class Main {
     label: 'C#',
     icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg',
     version: '.NET 7',
+    runtime: { language: 'csharp', version: '6.12.0' },
     monacoLang: 'csharp',
     defaultCode: `// C#
 using System;
@@ -97,6 +104,7 @@ class Program {
     label: 'Go',
     icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original-wordmark.svg',
     version: 'Go 1.21',
+    runtime: { language: 'go', version: '1.16.2' },
     monacoLang: 'go',
     defaultCode: `// Go
 package main
@@ -111,6 +119,7 @@ func main() {
     label: 'Rust',
     icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rust/rust-original.svg',
     version: 'Rust 1.75',
+    runtime: { language: 'rust', version: '1.68.2' },
     monacoLang: 'rust',
     defaultCode: `// Rust
 fn main() {
@@ -122,6 +131,7 @@ fn main() {
     label: 'PHP',
     icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg',
     version: 'PHP 8.2',
+    runtime: { language: 'php', version: '8.2.3' },
     monacoLang: 'php',
     defaultCode: `<?php
 echo "Hello World";
@@ -132,6 +142,7 @@ echo "Hello World";
     label: 'Ruby',
     icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ruby/ruby-original.svg',
     version: 'Ruby 3',
+    runtime: { language: 'ruby', version: '3.0.1' },
     monacoLang: 'ruby',
     defaultCode: `# Ruby
 puts "Hello World"`
