@@ -48,7 +48,7 @@ function ProblemDescription() {
 
           </TabList>
           <Box>
-            <Tooltip title='Zoom'>
+            <Tooltip title='Maximize'>
               <Button sx={{ p: 0, minWidth: 'unset', width: '20px' }}>
                 <ZoomOutMapOutlinedIcon sx={{ color: '#8f8f8f' }} />
               </Button>

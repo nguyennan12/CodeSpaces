@@ -34,13 +34,13 @@ function Description() {
         <Chip sx={{ color: '#ffa703', fontWeight: '400', backgroundColor: 'rgba(251, 147, 21, 0.2)' }} label="Medium" />
         <Chip sx={{ px: 1 }} icon={<SellOutlinedIcon sx={{ fontSize: '1.25rem' }} />} label="Topic" />
       </Box>
-      <Typography sx={{ color: '#363636' }}>Given a signed 32-bit integer x, return x with its digits reversed. If reversing x causes the value to go outside the signed 32-bit integer range [-231, 231 - 1], then return 0.</Typography>
+      <Typography sx={{ color: '#808080' }}>Given a signed 32-bit integer x, return x with its digits reversed. If reversing x causes the value to go outside the signed 32-bit integer range [-231, 231 - 1], then return 0.</Typography>
       <Typography variant='b1' sx={{ fontWeight: 'bold' }}>Assume the environment does not allow you to store 64-bit integers (signed or unsigned).</Typography>
       <TableContainer sx={{ boxShadow: '0 0 1px 1px rgba(0,0,0,0.2)' }} component={Paper}>
         <Table size="small" aria-label="a dense table">
           <TableHead>
             <TableRow>
-              <TableCell>Test Case</TableCell>
+              <TableCell>Example</TableCell>
               <TableCell align="left">Input</TableCell>
               <TableCell align="right">Output</TableCell>
             </TableRow>
@@ -92,6 +92,7 @@ function Description() {
           </Typography>
         </AccordionDetails>
       </Accordion>
+
     </Box>
   )
 }
