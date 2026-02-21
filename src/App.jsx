@@ -1,6 +1,7 @@
 import Problems from '~/pages/Problems/_id'
 import { Route, Routes, Navigate } from 'react-router-dom'
 import Auth from './pages/Auth/Auth'
+import NotFound from './pages/404/NotFound'
 
 function App() {
   return (
@@ -13,7 +14,7 @@ function App() {
 
       <Route path='/login' element={<Auth />} />
       <Route path='/register' element={<Auth />} />
-      <Route path='*' element />
+      <Route path='*' element={<NotFound />} />
     </Routes>
   )
 }

@@ -10,6 +10,7 @@ import Menu from '@mui/material/Menu'
 import MenuItem from '@mui/material/MenuItem'
 import Tooltip from '@mui/material/Tooltip'
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 
 
@@ -65,12 +66,15 @@ function Profiles() {
           </ListItemIcon>
           Settings
         </MenuItem>
-        <MenuItem>
-          <ListItemIcon>
-            <Logout fontSize="small" />
-          </ListItemIcon>
-          Logout
-        </MenuItem>
+        <Link to="/login" style={{ textDecoration: 'none', color: 'var(--mui-palette-primary-contrastText)' }}>
+          <MenuItem>
+            <ListItemIcon>
+              <Logout fontSize="small" />
+            </ListItemIcon>
+            Logout
+          </MenuItem>
+        </Link>
+
       </Menu>
     </Box>
   )
