@@ -1,15 +1,18 @@
-import ReactDOM from 'react-dom/client'
-import React from 'react'
 import CssBaseline from '@mui/material/CssBaseline'
+import { ThemeProvider } from '@mui/material/styles'
+import ReactDOM from 'react-dom/client'
+import { BrowserRouter } from 'react-router-dom'
 import App from '~/App.jsx'
 import theme from './theme'
-import { ThemeProvider } from '@mui/material/styles'
+import { ToastContainer } from 'react-toastify'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
+
+  <BrowserRouter basename='/'>
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <App />
+      <ToastContainer autoClose={2000} theme="colored" />
     </ThemeProvider >
-  </React.StrictMode>
+  </BrowserRouter>
 )

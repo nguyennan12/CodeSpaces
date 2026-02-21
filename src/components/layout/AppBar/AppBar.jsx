@@ -89,16 +89,7 @@ function AppBar() {
           }}
           sx={{
             minWidth: '100px',
-            display: { xs: 'none', md: 'flex' },
-            '& input': { color: 'primary.contrastText' },
-            '& label.Mui-focused': { color: 'primary.contrastText' },
-            '& .MuiOutlinedInput-root': {
-              borderRadius: '30px',
-              '& input': { p: 0.875 },
-              '& fieldset': { borderColor: 'secondary.main' },
-              '&:hover fieldset': { borderColor: 'secondary.main' },
-              '&.Mui-focused fieldset': { borderColor: 'secondary.main' }
-            }
+            display: { xs: 'none', md: 'flex' }
           }} />
         <ModeSelect />
         <Tooltip title="Notifications">

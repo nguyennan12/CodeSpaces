@@ -3,14 +3,13 @@ import TerminalIcon from '@mui/icons-material/Terminal'
 import TabContext from '@mui/lab/TabContext'
 import TabList from '@mui/lab/TabList'
 import TabPanel from '@mui/lab/TabPanel'
-import { Typography } from '@mui/material'
+import Typography from '@mui/material/Typography'
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
 import { useColorScheme } from '@mui/material/styles'
 import Tab from '@mui/material/Tab'
 import * as React from 'react'
 import { executeCode } from '~/apis/services/compiler-code'
-import '@fontsource/fira-code'
 
 
 function Terminal({ language, editorRef }) {
@@ -28,7 +27,8 @@ function Terminal({ language, editorRef }) {
     try {
       setIsLoading(true)
       const { run: result } = await executeCode(language, srcCode)
-      setOutput(result.output)
+      console.log(result)
+      setOutput(result.output.split('\n'))
     } catch (error) {
       // toast({
       //   title: 'An error occurred',
@@ -76,7 +76,11 @@ function Terminal({ language, editorRef }) {
           </Button>
 
         </Box>
-        <TabPanel sx={{ px: 2, py: 3, fontFamily: 'monospaceyarn add @fontsource/jetbrains-mono' }} value="1">{output ? output : ''}</TabPanel>
+        <TabPanel sx={{ px: 2, py: 3, fontFamily: 'monospace' }} value="1">
+          {output
+            ? output.map((line, i) => <Typography key={i} style={{ margin: 0 }}>{line}</Typography>)
+            : ''}
+        </TabPanel>
         <TabPanel sx={{ px: 2, py: 3 }} value="2">Terminal</TabPanel>
       </TabContext >
     </Box >

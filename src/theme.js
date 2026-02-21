@@ -69,6 +69,30 @@ const theme = extendTheme({
         root: {
           color: 'var(--mui-palette-primary-contrastText)',
           fontSize: '0.875rem'
+
+        }
+      }
+    },
+    MuiTextField: {
+      styleOverrides: {
+        root: {
+          '& input': {
+            color: 'var(--mui-palette-primary-contrastText)'
+          },
+          '& label.Mui-focused': {
+            color: 'var(--mui-palette-primary-contrastText)'
+          },
+          '& .MuiOutlinedInput-root': {
+            '& fieldset': {
+              borderColor: 'var(--mui-palette-secondary-main)'
+            },
+            '&:hover fieldset': {
+              borderColor: 'var(--mui-palette-secondary-main)'
+            },
+            '&.Mui-focused fieldset': {
+              borderColor: 'var(--mui-palette-secondary-main)'
+            }
+          }
         }
       }
     },
