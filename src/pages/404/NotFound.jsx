@@ -13,7 +13,7 @@ function NotFound() {
     <Box sx={{
       width: '100vw',
       height: '100vh',
-      bgcolor: '#25344C',
+      bgcolor: '#1c2127',
       color: 'white'
     }}>
       <Box sx={{
