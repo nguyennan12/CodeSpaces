@@ -3,6 +3,7 @@ import { Route, Routes, Navigate } from 'react-router-dom'
 import Auth from './pages/Auth/Auth'
 import NotFound from './pages/404/NotFound'
 
+
 function App() {
   return (
     <Routes>
