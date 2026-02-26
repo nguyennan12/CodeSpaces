@@ -61,6 +61,7 @@ function Terminal({ language, editorRef }) {
           </TabList>
 
           <Button
+            className='interceptor-loading'
             variant='contained'
             sx={{
               gap: 1,
