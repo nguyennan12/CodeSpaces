@@ -4,8 +4,10 @@ import { UserReducer } from './user/userSlice'
 
 import { combineReducers } from '@reduxjs/toolkit'
 import { persistReducer } from 'redux-persist'
-import storage from 'redux-persist/lib/storage'
+import createWebStorage from 'redux-persist/es/storage/createWebStorage'
 
+
+const storage = createWebStorage('local')
 //cau hinh persist
 const rootPersistConfig = {
   key: 'root',
@@ -22,5 +24,6 @@ const reducers = combineReducers({
 const persistedReducer = persistReducer(rootPersistConfig, reducers)
 
 export const store = configureStore({
-  reducer: persistedReducer
+  reducer: persistedReducer,
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware({ serializableCheck: false })
 })
