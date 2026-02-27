@@ -8,8 +8,8 @@ import Typography from '@mui/material/Typography'
 import Zoom from '@mui/material/Zoom'
 import { useColorScheme } from '@mui/material/styles'
 import { Link } from 'react-router-dom'
-import FieldErrorAlert from '~/components/common/Form/FieldErrorAlert'
 import { toast } from 'react-toastify'
+import FieldErrorAlert from '~/components/common/Form/FieldErrorAlert'
 
 import { useForm } from 'react-hook-form'
 import {
@@ -20,16 +20,31 @@ import {
   PASSWORD_RULE
 } from '~/utils/validators'
 
+import { useSearchParams, useNavigate } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { loginUserAPI } from '~/redux/user/userSlice'
+
 function LoginForm() {
   const { mode } = useColorScheme()
   const { register, handleSubmit, formState: { errors } } = useForm()
+  let [searchParams] = useSearchParams()
 
-  const onSubmitRegister = (data) => {
-    // console.log('🚀 ~ onSubmitRegister ~ data:', data)
-    toast.success('Login successful', { position: 'bottom-left' })
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
+
+  const registeredEmail = searchParams.get('registeredEmail')
+  const verifiedEmail = searchParams.get('verifiedEmail')
+
+  const onSubmitLogin = (data) => {
+    const { email, password } = data
+    toast.promise(dispatch(loginUserAPI({ email, password })),
+      { pending: 'Logging in...' }
+    ).then(res => {
+      if (!res.error) navigate('/')
+    })
   }
   return (
-    <form onSubmit={handleSubmit(onSubmitRegister)}>
+    <form onSubmit={handleSubmit(onSubmitLogin)}>
       <Zoom in={true} style={{ transitionDelay: '200ms' }}>
         <MuiCard sx={{ minWidth: '380px', maxWidth: '380px' }}>
           <Box sx={{ margin: '1em', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
@@ -38,16 +53,20 @@ function LoginForm() {
           </Box>
 
           <Box sx={{ marginTop: '1em', display: 'flex', justifyContent: 'center', flexDirection: 'column', padding: '0 1em' }}>
-            <Alert severity="success" sx={{ '.MuiAlert-message': { overflow: 'hidden' } }}>
-              Your email&nbsp;
-              <Typography variant="span" sx={{ fontWeight: 'bold', '&:hover': { color: '#fdba26' } }}>trungquandev@gmail.com</Typography>
-              &nbsp;has been verified.<br />Now you can login to enjoy our services! Have a good day!
-            </Alert>
-            {/* <Alert severity="info" sx={{ '.MuiAlert-message': { overflow: 'hidden' } }}>
-              An email has been sent to&nbsp;
-              <Typography variant="span" sx={{ fontWeight: 'bold', '&:hover': { color: '#fdba26' } }}>trungquandev@gmail.com</Typography>
-              <br />Please check and verify your account before logging in!
-            </Alert> */}
+            {verifiedEmail &&
+              <Alert severity="success" sx={{ '.MuiAlert-message': { overflow: 'hidden' } }}>
+                Your email&nbsp;
+                <Typography variant="span" sx={{ fontWeight: 'bold', '&:hover': { color: '#fdba26' } }}>{verifiedEmail}</Typography>
+                &nbsp;has been verified.<br />Now you can login to enjoy our services! Have a good day!
+              </Alert>
+            }
+            {registeredEmail &&
+              <Alert severity="info" sx={{ '.MuiAlert-message': { overflow: 'hidden' } }}>
+                An email has been sent to&nbsp;
+                <Typography variant="span" sx={{ fontWeight: 'bold', '&:hover': { color: '#fdba26' } }}>{registeredEmail}</Typography>
+                <br />Please check and verify your account before logging in!
+              </Alert>
+            }
           </Box>
 
           <Box sx={{ padding: '0 1em 1em 1em' }}>

@@ -7,7 +7,7 @@ import { useColorScheme } from '@mui/material/styles'
 import FieldErrorAlert from '~/components/common/Form/FieldErrorAlert'
 import Button from '@mui/material/Button'
 import CardActions from '@mui/material/CardActions'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 import { toast } from 'react-toastify'
 import {
@@ -18,14 +18,20 @@ import {
   PASSWORD_RULE_MESSAGE,
   EMAIL_RULE_MESSAGE
 } from '~/utils/validators'
+import { registerUserAPI } from '~/apis'
 
 function RegisterForm() {
   const { mode } = useColorScheme()
   const { register, handleSubmit, watch, formState: { errors } } = useForm()
+  const navigate = useNavigate()
 
   const onSubmitRegister = (data) => {
-    // console.log('🚀 ~ onSubmitRegister ~ data:', data)
-    toast.success('Registration successful', { position: 'bottom-left' })
+    const { email, password } = data
+    toast.promise(registerUserAPI({ email, password }),
+      { pending: 'Registration is in progress...' }
+    ).then(user => {
+      navigate(`/login?registeredEmail=${user.email}`)
+    })
   }
 
   return (
