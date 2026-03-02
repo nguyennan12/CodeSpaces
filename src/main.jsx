@@ -4,7 +4,9 @@ import ReactDOM from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
 import App from '~/App.jsx'
 import theme from './theme'
+
 import { ToastContainer } from 'react-toastify'
+import { ConfirmProvider } from 'material-ui-confirm'
 
 import { Provider } from 'react-redux'
 import { store } from '~/redux/store'
@@ -19,10 +21,13 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <BrowserRouter basename='/'>
     <Provider store={store}>
       <PersistGate loading={null} persistor={persitor}>
+
         <ThemeProvider theme={theme}>
-          <CssBaseline />
-          <App />
-          <ToastContainer autoClose={2000} theme="colored" />
+          <ConfirmProvider>
+            <CssBaseline />
+            <App />
+            <ToastContainer autoClose={2000} theme="colored" />
+          </ConfirmProvider>
         </ThemeProvider >
       </PersistGate>
     </Provider>

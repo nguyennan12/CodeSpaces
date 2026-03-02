@@ -13,11 +13,13 @@ function Auth() {
 
   const currentUser = useSelector(selectCurrentUser)
 
+  const { mode } = useColorScheme()
+
   if (currentUser) {
-    <Navigate to='/' replace={true} />
+    return <Navigate to='/' replace={true} />
   }
 
-  const { mode } = useColorScheme()
+
   return (
     <Box sx={{
       minHeight: '100vh',
